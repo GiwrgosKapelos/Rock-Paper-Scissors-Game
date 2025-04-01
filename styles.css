@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: beige;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.game-container {
+  background-color: darkorchid;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center; /* Align text center. might change later */
+  max-width: 500px; /*might change later */
+  width: 90%; /*might change later */
+}
+
+h1 {
+  color: white;
+  margin-bottom: 25px;
+}
+
+.round-container {
+  background-color: brown;
+  color: white;
+  padding: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.score-container {
+  background-color: darkolivegreen;
+  color: white;
+  padding: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.view-choices {
+  background-color: chocolate;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  font-size: 24px;
+  /* margin-bottom: 20px; */
+}
+
+.player {
+  flex: 1; /* This ensures that the .player elements are evenly distributed within the .view-choices container. */
+}
+
+.choice-box {
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  background-color: #f9f9f9;
+}
+
+.myChoice {
+  background-color: darksalmon;
+  color: white;
+  padding: 10px;
+  font-size: 24px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10px;
+}
+
+.choice-btn {
+  background-color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 40px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.4s;
+}
+
+.choice-btn:hover {
+  background-color: #45a049;
+}
+
+.lastGames {
+  background-color: crimson;
+  color: white;
+  padding: 10px;
+  font-size: 24px;
+}
+
+.statistics {
+  background-color: goldenrod;
+  color: white;
+  padding: 10px;
+  font-size: 24px;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock-Paper-Scissors Game</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="game-container">
+      <h1>Rock-Paper-Scissors</h1>
+      <div class="round-container">Round: <span id="rounds">0</span></div>
+      <div class="score-container">
+        Score: You <span id="myScore">0</span> -
+        <span id="aiScore">0</span> Computer
+      </div>
+      <div class="view-choices">
+        <div class="player">
+          <h3>YOU</h3>
+          <div class="choice-box" id="player-choice">❔</div>
+        </div>
+        <div class="player">
+          <h3>COMPUTER</h3>
+          <div class="choice-box" id="computer-choice">❔</div>
+        </div>
+      </div>
+      <div class="myChoice">
+        Your choice:
+        <div class="buttons">
+          <button class="choice-btn" data-choice="✊">✊</button>
+          <button class="choice-btn" data-choice="✋">✋</button>
+          <button class="choice-btn" data-choice="✌">✌</button>
+        </div>
+      </div>
+      <div class="lastGames">
+        <p>Last game results: <span id="last-result">-</span></p>
+        <p>Last 5 games: <span id="last5Games">-</span></p>
+      </div>
+      <div class="statistics">
+        <p>Statistics</p>
+        <p>
+          Wins: <span id="winsStat">0</span> Ties: <span id="tiesStat">0</span>
+        </p>
+        <p>Most frequest choice: <span id="freqchoice">-</span></p>
+      </div>
+    </div>
+  </body>
+</html>
