@@ -13,11 +13,13 @@ const frequentChoices = document.getElementById("freqchoice");
 
 let playerScore = 0;
 let computerScore = 0;
+let round = 0;
 
 choiceBtns.forEach((button) => {
   button.addEventListener("click", () => {
     const playerChoice = button.getAttribute("data-choice");
     playerChoiceDisplay.textContent = playerChoice;
+    console.log(playerChoice);
 
     // Computer random choice
     const choices = ["✊", "✋", "✌"];
@@ -34,11 +36,14 @@ choiceBtns.forEach((button) => {
 
     playerScoreDisplay.textContent = playerScore;
     computerScoreDisplay.textContent = computerScore;
+    round++;
+    numberOfRounds.textContent = round;
+    Last_5_Games(result, last5Games);
   });
 });
 
 function determineWinner(player, computer) {
-  if (player === computer) "It's a tie!";
+  if (player === computer) return "It's a tie!";
 
   if (
     (player === "✊" && computer === "✌") ||
@@ -48,4 +53,32 @@ function determineWinner(player, computer) {
     return "You win!";
   }
   return "Computer wins!";
+}
+
+let counter = 0;
+
+function Last_5_Games(result, last5Games) {
+  if (counter == 0) {
+    if (result.includes("You win")) last5Games.textContent = "W";
+    if (result.includes("Computer wins")) last5Games.textContent = "L";
+    if (result.includes("It's a tie!")) last5Games.textContent = "T";
+    counter++;
+  } else if (counter == 5) {
+    if (result.includes("You win"))
+      last5Games.textContent = "W - " + last5Games.textContent;
+    if (result.includes("Computer wins"))
+      last5Games.textContent = "L - " + last5Games.textContent;
+    if (result.includes("It's a tie!"))
+      last5Games.textContent = "T - " + last5Games.textContent;
+    last5Games.textContent = last5Games.textContent.slice(0, -4);
+  } else {
+    if (result.includes("You win"))
+      last5Games.textContent = "W - " + last5Games.textContent;
+    if (result.includes("Computer wins"))
+      last5Games.textContent = "L - " + last5Games.textContent;
+    if (result.includes("It's a tie!"))
+      last5Games.textContent = "T - " + last5Games.textContent;
+    if (counter < 5) counter++;
+  }
+  console.log(counter);
 }
