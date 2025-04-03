@@ -14,6 +14,7 @@ const frequentChoices = document.getElementById("freqchoice");
 const winPercent = document.getElementById("winPercent");
 const losePercent = document.getElementById("losePercent");
 const tiePercent = document.getElementById("tiePercent");
+const timeDisplay = document.getElementById("timer");
 
 let playerScore = 0;
 let computerScore = 0;
@@ -45,6 +46,7 @@ choiceBtns.forEach((button) => {
     Last_5_Games(result, last5Games);
     Statistics(result, round);
     FreqChoice(playerChoice, round);
+    if (round === 1) startTimer();
   });
 });
 
@@ -69,14 +71,6 @@ function Last_5_Games(result, last5Games) {
     if (result.includes("Computer wins!")) last5Games.textContent = "L";
     if (result.includes("It's a tie!")) last5Games.textContent = "T";
     counter++;
-  } else if (counter == 5) {
-    if (result.includes("You win!"))
-      last5Games.textContent = "W - " + last5Games.textContent;
-    if (result.includes("Computer wins!"))
-      last5Games.textContent = "L - " + last5Games.textContent;
-    if (result.includes("It's a tie!"))
-      last5Games.textContent = "T - " + last5Games.textContent;
-    last5Games.textContent = last5Games.textContent.slice(0, -4);
   } else {
     if (result.includes("You win!"))
       last5Games.textContent = "W - " + last5Games.textContent;
@@ -84,7 +78,9 @@ function Last_5_Games(result, last5Games) {
       last5Games.textContent = "L - " + last5Games.textContent;
     if (result.includes("It's a tie!"))
       last5Games.textContent = "T - " + last5Games.textContent;
-    if (counter < 5) counter++;
+    if (counter >= 5)
+      last5Games.textContent = last5Games.textContent.slice(0, -4);
+    else counter++;
   }
   console.log(counter);
 }
@@ -93,20 +89,19 @@ let wins = 0;
 let lose = 0;
 let tie = 0;
 
-// THIS DOESN'T WORK CORRECTLY
 function Statistics(result, round) {
   if (result.includes("You win!")) {
     numberOfWins.textContent = ++wins;
-    winPercent.textContent = Math.round((wins / round) * 100);
   }
   if (result.includes("Computer wins!")) {
     numberOfLosses.textContent = ++lose;
-    losePercent.textContent = Math.round((lose / round) * 100);
   }
   if (result.includes("It's a tie!")) {
     numberOfTies.textContent = ++tie;
-    tiePercent.textContent = Math.round((tie / round) * 100);
   }
+  winPercent.textContent = Math.round((wins / round) * 100);
+  losePercent.textContent = Math.round((lose / round) * 100);
+  tiePercent.textContent = Math.round((tie / round) * 100);
 }
 
 let rock = 0;
@@ -127,4 +122,16 @@ function FreqChoice(player, round) {
     frequentChoices.textContent = `Scissors, ${Math.round(
       (scissor / round) * 100
     )}%`;
+}
+
+let timer;
+let seconds = 0;
+function startTimer() {
+  timeDisplay.textContent = seconds;
+
+  // Start a new timer
+  timer = setInterval(() => {
+    seconds++;
+    timeDisplay.textContent = seconds;
+  }, 1000);
 }
