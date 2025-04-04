@@ -24,7 +24,6 @@ choiceBtns.forEach((button) => {
   button.addEventListener("click", () => {
     const playerChoice = button.getAttribute("data-choice");
     playerChoiceDisplay.textContent = playerChoice;
-    console.log(playerChoice);
 
     // Computer random choice
     const choices = ["✊", "✋", "✌"];
@@ -99,9 +98,9 @@ function Statistics(result, round) {
   if (result.includes("It's a tie!")) {
     numberOfTies.textContent = ++tie;
   }
-  winPercent.textContent = Math.round((wins / round) * 100);
-  losePercent.textContent = Math.round((lose / round) * 100);
-  tiePercent.textContent = Math.round((tie / round) * 100);
+  winPercent.textContent = round ? Math.round((wins / round) * 100) : 0;
+  losePercent.textContent = round ? Math.round((lose / round) * 100) : 0;
+  tiePercent.textContent = round ? Math.round((tie / round) * 100) : 0;
 }
 
 let rock = 0;
@@ -134,4 +133,23 @@ function startTimer() {
     seconds++;
     timeDisplay.textContent = seconds;
   }, 1000);
+}
+
+function resetGame() {
+  // playerScore =
+  //   computerScore =
+  //   round =
+  //   wins =
+  //   lose =
+  //   tie =
+  //   rock =
+  //   paper =
+  //   scissor =
+  //   counter =
+  //   seconds =
+  //     0;
+  // clearInterval(timer);
+  location.reload();
+
+  // Update all DOM elements to 0/defaults
 }

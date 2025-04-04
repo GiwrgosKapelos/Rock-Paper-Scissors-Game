@@ -11,6 +11,7 @@
       <h1>Rock-Paper-Scissors</h1>
       <div class="round-container">
         <div class="rounds">Round: <span id="rounds">0</span></div>
+        <button id="resetbtn" onclick="resetGame()">Reset Button</button>
         <div class="timer">Time: <span id="timer">0</span>s</div>
       </div>
       <div class="score-container">
@@ -30,9 +31,15 @@
       <div class="myChoice">
         Your choice:
         <div class="buttons">
-          <button class="choice-btn" data-choice="✊">✊</button>
-          <button class="choice-btn" data-choice="✋">✋</button>
-          <button class="choice-btn" data-choice="✌">✌</button>
+          <button class="choice-btn" aria-label="Rock" data-choice="✊">
+            ✊
+          </button>
+          <button class="choice-btn" aria-label="Paper" data-choice="✋">
+            ✋
+          </button>
+          <button class="choice-btn" aria-label="Scissor" data-choice="✌">
+            ✌
+          </button>
         </div>
       </div>
       <div class="lastGames">

@@ -6,7 +6,7 @@
 
 body {
   font-family: "Arial", sans-serif;
-  background-color: beige;
+  background-color: #efeee9;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,7 +14,7 @@ body {
 }
 
 .game-container {
-  background-color: darkorchid;
+  background-color: #eb5e28;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -29,7 +29,7 @@ h1 {
 }
 
 .round-container {
-  background-color: brown;
+  background-color: #f9a03f;
   color: white;
   padding: 10px;
   font-size: 24px;
@@ -38,15 +38,29 @@ h1 {
   align-items: center;
 }
 
+#resetbtn {
+  background-color: #c9182c;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+#resetbtn:hover {
+  background-color: #782832;
+}
+
 .score-container {
-  background-color: darkolivegreen;
+  background-color: #a1c349;
   color: white;
   padding: 10px;
   font-size: 24px;
 }
 
 .view-choices {
-  background-color: chocolate;
+  background-color: #f3c053;
   color: white;
   display: flex;
   justify-content: space-between;
@@ -72,7 +86,7 @@ h1 {
 }
 
 .myChoice {
-  background-color: darksalmon;
+  background-color: #f3c053;
   color: white;
   padding: 10px;
   font-size: 24px;
@@ -103,14 +117,14 @@ h1 {
 }
 
 .lastGames {
-  background-color: crimson;
+  background-color: #87a330;
   color: white;
   padding: 10px;
   font-size: 24px;
 }
 
 .statistics {
-  background-color: goldenrod;
+  background-color: #6a8532;
   color: white;
   padding: 10px;
   font-size: 24px;
