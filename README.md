@@ -63,15 +63,15 @@ A responsive web-based Rock-Paper-Scissors game with advanced statistics trackin
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/rock-paper-scissors.git
+   git clone https://github.com/GiwrgosKapelos/rock-paper-scissors.git
 2. Open index.html in any modern browser
 
 Customization 🎨
 Changing Colors
 Modify color variables in styles.css:
-`.game-container { background-color: #eb5e28; }`
-`.score-container { background-color: #a1c349; }`
-/* etc. */
+- `.game-container { background-color: #eb5e28; }`
+- `.score-container { background-color: #a1c349; }`
+- /* etc. */
 
 Contributing 🤝
 Pull requests are welcome! For major changes, please open an issue first.
